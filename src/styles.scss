@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+
+
+@theme {
+  --color-background: #09090b;
+  --color-surface: #18181b;
+  --color-primary: #3b82f6;
+  --color-secondary: #a1a1aa;
+  --color-border: #27272a;
+
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-3xl: 1.5rem;
+}
+
+body {
+  @apply bg-background text-white font-sans antialiased overflow-x-hidden;
+}
+
+@layer components {
+
+  .bento-card {
+    @apply bg-surface border border-border rounded-3xl p-6 relative overflow-hidden transition-all duration-300;
+
+    &:hover {
+      @apply border-primary/30 shadow-lg shadow-primary/10;
+      transform: translateY(-2px);
+    }
+  }
+
+  .headline {
+    @apply text-3xl md:text-5xl font-bold tracking-tight mb-4;
+  }
+
+  .subtext {
+    @apply text-secondary text-sm md:text-base leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply bg-white text-background px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-colors inline-block;
+  }
+}

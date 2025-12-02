@@ -1,6 +1,5 @@
 @use "tailwindcss";
 
-
 @theme {
   --color-background: #09090b;
   --color-surface: #18181b;
@@ -10,8 +9,6 @@
 
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-
-  --radius-3xl: 1.5rem;
 }
 
 body {
@@ -20,7 +17,15 @@ body {
 
 @layer components {
 
-  .bento-card {
+  .portfolio-container {
+    @apply min-h-screen p-4 md:p-8 flex justify-center items-center;
+  }
+
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-6xl mx-auto auto-rows-[180px];
+  }
+
+ @mixin bento-base {
     @apply bg-surface border border-border rounded-3xl p-6 relative overflow-hidden transition-all duration-300;
 
     &:hover {
@@ -29,15 +34,119 @@ body {
     }
   }
 
+
+  .card-hero {
+    @include bento-base;
+    @apply md:col-span-2 md:row-span-2 flex flex-col justify-between;
+  }
+
+  .card-social {
+    @include bento-base;
+    @apply md:col-span-1 md:row-span-1 flex flex-col justify-center items-center gap-4 cursor-pointer hover:bg-surface/80;
+
+    &.linkedin {
+      @apply hover:bg-[#0077b5]/10 hover:border-[#0077b5]/50;
+    }
+  }
+
+  .card-stack {
+    @include bento-base;
+    @apply md:col-span-2 md:row-span-1 flex flex-col justify-center;
+  }
+
+  .card-project {
+    @include bento-base;
+    @apply md:col-span-2 md:row-span-2 p-0 cursor-pointer block;
+
+    &:hover .project-image {
+      @apply scale-110 opacity-40;
+    }
+    &:hover h3,
+    &:hover p,
+    &:hover .tech-tag {
+      @apply translate-y-0;
+    }
+    &:hover .arrow-icon {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+
+  .card-stats {
+    @include bento-base;
+    @apply md:col-span-1 md:row-span-2 flex flex-col justify-between;
+  }
+
+  .card-location {
+    @include bento-base;
+    @apply md:col-span-1 md:row-span-1 flex flex-col items-center justify-center text-center;
+  }
+
+
   .headline {
     @apply text-3xl md:text-5xl font-bold tracking-tight mb-4;
   }
 
   .subtext {
-    @apply text-secondary text-sm md:text-base leading-relaxed;
+    @apply text-secondary text-sm md:text-base leading-relaxed max-w-md;
   }
 
   .btn-primary {
-    @apply bg-white text-background px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-colors inline-block;
+    @apply bg-white text-background px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition-colors inline-block cursor-pointer;
+  }
+
+  .status-badge {
+    @apply flex items-center gap-3 mb-4 text-sm font-mono text-secondary;
+  }
+
+  .status-dot {
+    @apply w-2 h-2 rounded-full bg-green-500 animate-pulse;
+  }
+
+  .hero-glow {
+    @apply absolute top-0 right-0 -mr-10 -mt-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all pointer-events-none;
+  }
+
+  .icon-circle {
+    @apply w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-2xl;
+  }
+
+  .label-mono {
+    @apply text-sm font-mono text-secondary mb-4 uppercase tracking-wider;
+  }
+
+  .stack-icons {
+    @apply flex gap-4 text-2xl opacity-80;
+  }
+
+  .project-bg-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10 pointer-events-none;
+  }
+
+  .project-image {
+    @apply absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-60;
+  }
+
+  .project-img-placeholder {
+    @apply absolute inset-0 bg-gray-800 z-0 group-hover:scale-105 transition-transform duration-500;
+  }
+
+  .project-gradient {
+    @apply absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10;
+  }
+
+  .project-content {
+    @apply relative z-20 h-full flex flex-col justify-end p-6 md:p-8;
+  }
+
+  .stat-number {
+    @apply text-4xl font-bold text-primary;
+  }
+
+  .stat-label {
+    @apply text-sm text-secondary;
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 rounded-md bg-white/10 border border-white/5 text-xs font-mono text-gray-300 backdrop-blur-sm;
   }
 }

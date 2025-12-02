@@ -1,0 +1,9 @@
+<a [href]="link()" target="_blank" class="card-social group h-full w-full" [ngClass]="type()">
+  <div
+    class="icon-circle group-hover:bg-white group-hover:text-black transition-colors duration-300"
+  >
+    <ng-content></ng-content>
+  </div>
+
+  <span class="font-bold">{{ label() }}</span>
+</a>

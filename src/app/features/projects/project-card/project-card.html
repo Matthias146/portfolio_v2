@@ -1,0 +1,59 @@
+<a
+  [href]="project().liveDemoUrl || '#'"
+  target="_blank"
+  class="group block h-full w-full relative overflow-hidden rounded-3xl"
+>
+  <img [src]="project().imageUrl" [alt]="project().title" class="project-image" />
+
+  <div class="project-gradient"></div>
+
+  <div class="project-content">
+    @if (project().liveDemoUrl) {
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 w-fit mb-2"
+    >
+      <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+      <span class="text-xs font-mono text-gray-300">Live Demo</span>
+    </div>
+    }
+
+    <h3
+      class="text-2xl font-bold text-white mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+    >
+      {{ project().title }}
+    </h3>
+
+    <p
+      class="text-gray-300 text-sm mb-4 line-clamp-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+    >
+      {{ project().description }}
+    </p>
+
+    <div
+      class="flex flex-wrap gap-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-100"
+    >
+      @for (tech of project().techStack; track tech) {
+      <span class="tech-tag">{{ tech }}</span>
+      }
+    </div>
+  </div>
+
+  <div
+    class="arrow-icon absolute top-6 right-6 p-2 rounded-full bg-white text-black opacity-0 -translate-y-2 transition-all duration-300 shadow-lg"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      class="w-5 h-5"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+      />
+    </svg>
+  </div>
+</a>

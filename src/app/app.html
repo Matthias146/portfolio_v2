@@ -1,140 +1,38 @@
 <main class="portfolio-container">
   <div class="bento-grid">
-    <div class="card-hero group">
-      <div>
-        <div class="status-badge">
-          <div class="status-dot"></div>
-          <span>Open to work</span>
-        </div>
-        <h1 class="headline">
-          Frontend Developer <br />
-          <span class="text-secondary">building with Angular.</span>
-        </h1>
-        <p class="subtext">
-          Hi, ich bin Matthias. Ich baue performante, skalierbare Web-Apps mit Fokus auf UX und
-          Clean Code.
-        </p>
-      </div>
-
-      <div class="mt-6">
-        <button class="btn-primary">Projekte ansehen</button>
-      </div>
-
-      <div class="hero-glow"></div>
+    <div class="md:col-span-2 md:row-span-2">
+      <app-hero></app-hero>
     </div>
 
-    <a href="https://github.com/matthias146" target="_blank" class="card-social group">
-      <div class="icon-circle group-hover:bg-white group-hover:text-black transition-colors">
-        <icon-github class="w-6 h-6"></icon-github>
-      </div>
-      <span class="font-bold">GitHub</span>
-    </a>
-
-    <a
-      href="https://linkedin.com/in/matthias-hammelehle-5137a6269"
-      target="_blank"
-      class="card-social group linkedin"
+    <app-social-card
+      class="md:col-span-1 md:row-span-1 block h-full"
+      link="https://github.com/matthias146"
+      label="GitHub"
     >
-      <div
-        class="icon-circle group-hover:bg-[#0077b5] group-hover:text-white transition-colors duration-300"
-      >
-        <icon-linkedin class="w-6 h-6"></icon-linkedin>
-      </div>
-      <span class="font-bold">LinkedIn</span>
-    </a>
+      <icon-github class="w-6 h-6"></icon-github>
+    </app-social-card>
 
-    <div class="card-stack">
-      <h3 class="label-mono">Mein Arsenal</h3>
-      <div class="stack-icons">
-        <div class="hover:text-[#dd0031] transition-colors" title="Angular">
-          <icon-angular class="w-8 h-8"></icon-angular>
-        </div>
-        <div class="hover:text-[#3178c6] transition-colors" title="TypeScript">
-          <icon-typescript class="w-8 h-8"></icon-typescript>
-        </div>
+    <app-social-card
+      class="md:col-span-1 md:row-span-1 block h-full"
+      link="https://linkedin.com/in/matthias-hammelehle-5137a6269"
+      label="LinkedIn"
+      type="linkedin"
+    >
+      <icon-linkedin class="w-6 h-6"></icon-linkedin>
+    </app-social-card>
 
-        <span class="text-2xl">⚛️</span>
-        <span class="text-2xl">🌊</span>
-      </div>
+    <div class="md:col-span-2 md:row-span-1">
+      <app-stack></app-stack>
     </div>
 
-    <a href="#" class="card-project group">
-      <img
-        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-        alt="Project Preview"
-        class="project-image"
-      />
+    <app-project-card class="card-project" [project]="featuredProject"> </app-project-card>
 
-      <div class="project-gradient"></div>
-
-      <div class="project-content">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 w-fit mb-2"
-        >
-          <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-          <span class="text-xs font-mono text-gray-300">Live Demo</span>
-        </div>
-
-        <h3
-          class="text-2xl font-bold text-white mb-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
-        >
-          E-Commerce Dashboard
-        </h3>
-
-        <p
-          class="text-gray-300 text-sm mb-4 line-clamp-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-75"
-        >
-          Ein hochperformantes Dashboard zur Analyse von Verkaufsdaten. Echtzeit-Updates via
-          WebSockets.
-        </p>
-
-        <div
-          class="flex flex-wrap gap-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-100"
-        >
-          <span class="tech-tag">Angular 18</span>
-          <span class="tech-tag">Tailwind</span>
-          <span class="tech-tag">Highcharts</span>
-        </div>
-      </div>
-
-      <div
-        class="arrow-icon absolute top-6 right-6 p-2 rounded-full bg-white text-black opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          class="w-5 h-5"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-          />
-        </svg>
-      </div>
-    </a>
-
-    <div class="card-stats">
-      <div>
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Jahre Erfahrung</div>
-      </div>
-      <div>
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Projekte</div>
-      </div>
-      <div>
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Coffee fueled</div>
-      </div>
+    <div class="md:col-span-1 md:row-span-2">
+      <app-stats></app-stats>
     </div>
 
-    <div class="card-location">
-      <span class="text-3xl mb-2">🌍</span>
-      <span class="font-mono text-sm">Remote / DACH</span>
+    <div class="md:col-span-1 md:row-span-1">
+      <app-location></app-location>
     </div>
   </div>
 </main>

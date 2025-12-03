@@ -1,22 +1,47 @@
-<div class="card-hero h-full group relative">
-  <div>
-    <div class="status-badge">
-      <div class="status-dot"></div>
-      <span>Open to work</span>
+<div
+  class="card-hero h-full group relative flex flex-col md:flex-row md:items-center gap-6 overflow-hidden"
+>
+  <div class="flex-1 flex flex-col justify-between z-10 h-full py-2 float-left">
+    <div>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface/50 border border-white/5 w-fit mb-6"
+      >
+        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+        <span class="text-xs font-mono text-secondary">Open to work</span>
+      </div>
+
+      <h1 class="headline leading-tight mb-4">
+        Frontend Dev <br />
+        <span class="text-secondary">with Angular.</span>
+      </h1>
+
+      <p class="subtext max-w-sm line-clamp-3">
+        Hi, ich bin Matthias. Ich baue performante Web-Apps mit Fokus auf UX, Animationen und Clean
+        Code.
+      </p>
     </div>
-    <h1 class="headline">
-      Frontend Developer <br />
-      <span class="text-secondary">building with Angular.</span>
-    </h1>
-    <p class="subtext">
-      Hi, ich bin Matthias. Ich baue performante, skalierbare Web-Apps mit Fokus auf UX und Clean
-      Code.
-    </p>
+
+    <div class="mt-6">
+      <button class="btn-primary group-hover:translate-x-1 transition-transform">
+        Projekte ansehen ->
+      </button>
+    </div>
   </div>
 
-  <div class="mt-6">
-    <button class="btn-primary">Projekte ansehen</button>
+  <div class="shrink-0 order-first md:order-last flex justify-end md:block">
+    <div
+      class="relative w-20 h-20 md:w-32 md:h-32 transition-transform duration-500 hover:scale-105 hover:rotate-3"
+    >
+      <img
+        src="me.png"
+        alt="Profile Picture"
+        class="w-full h-full object-cover object-top rounded-2xl shadow-2xl grayscale group-hover:grayscale-0 group-hover:shadow-primary/40 transition-all duration-500"
+      />
+      <div class="absolute -bottom-2 -right-2 bg-surface rounded-full p-1 text-xl shadow-sm">
+        👋
+      </div>
+    </div>
   </div>
 
-  <div class="hero-glow"></div>
+  <div class="hero-glow opacity-50 group-hover:opacity-80 transition-opacity"></div>
 </div>

@@ -12,17 +12,23 @@
 }
 
 body {
-  @apply bg-background text-white font-sans antialiased overflow-x-hidden;
+  @apply bg-background text-white font-sans antialiased;
+  @apply overflow-x-hidden w-full;
 }
 
 @layer components {
 
   .portfolio-container {
-    @apply min-h-screen p-4 md:p-8 flex justify-center items-center;
+    @apply w-full min-h-screen bg-background text-white font-sans antialiased;
+    @apply flex flex-col items-center;
+    @apply md:justify-center md:flex-row;
+    @apply p-4 py-12 md:p-8;
   }
 
   .bento-grid {
-    @apply grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-6xl mx-auto auto-rows-[180px];
+    @apply grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-6xl mx-auto;
+    @apply auto-rows-auto md:auto-rows-[180px];
+
   }
 
  @mixin bento-base {
@@ -149,4 +155,24 @@ body {
   .tech-tag {
     @apply px-3 py-1 rounded-md bg-white/10 border border-white/5 text-xs font-mono text-gray-300 backdrop-blur-sm;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface border border-background rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-700;
+}
+
+::selection {
+  @apply bg-primary/30 text-white;
 }

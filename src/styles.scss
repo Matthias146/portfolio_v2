@@ -77,6 +77,24 @@ body {
     }
   }
 
+  .card-project-featured {
+    @include bento-base;
+    @apply md:col-span-2 md:row-span-2 p-0 cursor-pointer block;
+
+    &:hover .project-image { @apply scale-110 opacity-40; }
+  }
+
+  .card-project-standard {
+    @include bento-base;
+    @apply md:col-span-1 md:row-span-2 p-0 cursor-pointer block;
+
+    &:hover .project-image { @apply scale-110 opacity-40; }
+  }
+
+  .project-image {
+    @apply absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-60;
+  }
+
   .card-stats {
     @include bento-base;
     @apply md:col-span-1 md:row-span-2 flex flex-col justify-between;

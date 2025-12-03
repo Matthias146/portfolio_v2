@@ -1,38 +1,13 @@
-<main class="portfolio-container">
-  <div class="bento-grid">
-    <div class="md:col-span-2 md:row-span-2">
-      <app-hero></app-hero>
-    </div>
+<router-outlet></router-outlet>
 
-    <app-social-card
-      class="md:col-span-1 md:row-span-1 block h-full"
-      link="https://github.com/matthias146"
-      label="GitHub"
-    >
-      <icon-github class="w-6 h-6"></icon-github>
-    </app-social-card>
-
-    <app-social-card
-      class="md:col-span-1 md:row-span-1 block h-full"
-      link="https://linkedin.com/in/matthias-hammelehle-5137a6269"
-      label="LinkedIn"
-      type="linkedin"
-    >
-      <icon-linkedin class="w-6 h-6"></icon-linkedin>
-    </app-social-card>
-
-    <div class="md:col-span-2 md:row-span-1">
-      <app-stack></app-stack>
-    </div>
-
-    <app-project-card class="card-project" [project]="featuredProject"> </app-project-card>
-
-    <div class="md:col-span-1 md:row-span-2">
-      <app-stats></app-stats>
-    </div>
-
-    <div class="md:col-span-1 md:row-span-1">
-      <app-location></app-location>
-    </div>
+<footer
+  class="w-full py-8 text-center text-sm text-secondary border-t border-white/5 mt-12 bg-background"
+>
+  <div class="flex justify-center gap-6 mb-2">
+    <a routerLink="/impressum" class="hover:text-primary transition-colors">Impressum</a>
+    <a routerLink="/datenschutz" class="hover:text-primary transition-colors">Datenschutz</a>
   </div>
-</main>
+  <div class="opacity-50">
+    &copy; {{ currentYear }} Matthias Hammelehle. Built with Angular & Tailwind.
+  </div>
+</footer>

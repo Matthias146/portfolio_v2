@@ -1,0 +1,22 @@
+<button
+  (click)="copyEmail()"
+  class="card-contact h-full w-full group flex flex-col items-center justify-center gap-3 bg-surface border border-border rounded-3xl p-6 relative overflow-hidden transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 cursor-pointer active:scale-95"
+>
+  <div
+    class="w-12 h-12 rounded-full flex items-center justify-center text-2xl transition-colors duration-300"
+    [ngClass]="
+      copied()
+        ? 'bg-green-500/20 text-green-500'
+        : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'
+    "
+  >
+    @if (copied()) { ✅ } @else { 📧 }
+  </div>
+
+  <div class="text-center">
+    <div class="font-bold text-sm">@if (copied()) { Copied! } @else { Contact Me }</div>
+    <div class="text-xs text-secondary mt-1 group-hover:text-white transition-colors">
+      mahammelehle@outlook.de
+    </div>
+  </div>
+</button>

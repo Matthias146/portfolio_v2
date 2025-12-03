@@ -1,0 +1,50 @@
+<main class="portfolio-container">
+  <div class="bento-grid">
+    <div class="md:col-span-2 md:row-span-2">
+      <app-hero></app-hero>
+    </div>
+
+    <app-social-card
+      class="md:col-span-1 md:row-span-1 block h-full"
+      link="https://github.com/matthias146"
+      label="GitHub"
+    >
+      <icon-github class="w-6 h-6"></icon-github>
+    </app-social-card>
+
+    <app-social-card
+      class="md:col-span-1 md:row-span-1 block h-full"
+      link="https://linkedin.com/in/matthias-hammelehle-5137a6269"
+      label="LinkedIn"
+      type="linkedin"
+    >
+      <icon-linkedin class="w-6 h-6"></icon-linkedin>
+    </app-social-card>
+
+    <div class="md:col-span-2 md:row-span-1">
+      <app-stack></app-stack>
+    </div>
+    @for (item of projects; track item.title) {
+
+    <app-project-card
+      [project]="item"
+      [ngClass]="item.featured ? 'card-project-featured' : 'card-project-standard'"
+    >
+    </app-project-card>
+
+    }
+
+    <div class="md:col-span-2 md:row-span-2">
+      <app-stats></app-stats>
+    </div>
+
+    <div class="md:col-span-1 md:row-span-2 flex flex-col gap-4">
+      <app-location class="h-full flex-1"></app-location>
+      <app-contact-card class="h-full flex-1"></app-contact-card>
+    </div>
+
+    <div class="md:col-span-1 md:row-span-2">
+      <app-toolkit-card></app-toolkit-card>
+    </div>
+  </div>
+</main>

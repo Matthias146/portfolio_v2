@@ -194,3 +194,16 @@ body {
 ::selection {
   @apply bg-primary/30 text-white;
 }
+
+.skill-pill {
+  @apply px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs font-medium text-gray-300 transition-all cursor-default;
+
+  &:hover {
+    @apply hover:bg-white/10 hover:border-primary/30 hover:text-white hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-0.5;
+
+  }
+}
+
+      .tool-item {
+        @apply p-3 rounded-xl bg-white/5 text-secondary hover:bg-white/10 hover:scale-110 transition-all cursor-default;
+      }

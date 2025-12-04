@@ -4,8 +4,21 @@ import { TypescriptComponent } from '../../shared/ui/icons/typescript';
 
 @Component({
   selector: 'app-stack',
-  imports: [AngularComponent, TypescriptComponent],
+  // imports: [AngularComponent, TypescriptComponent],
   templateUrl: './stack.html',
-  styleUrl: './stack.scss',
 })
-export class Stack {}
+export class Stack {
+  skills = [
+    'Angular',
+    'TypeScript',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'Tailwind',
+    'Firebase',
+    'Rest-API',
+    'Git',
+    'Scrum',
+    'Material Design',
+  ];
+}

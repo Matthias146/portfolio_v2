@@ -1,15 +1,21 @@
 <div
-  class="min-h-screen w-full bg-background text-gray-300 font-sans selection:bg-primary/30 selection:text-white pb-20"
+  class="w-full bg-background text-gray-300 font-sans selection:bg-primary/30 selection:text-white pb-20"
 >
-  <div class="max-w-4xl mx-auto p-6 md:p-12 md:pt-20">
-    <a
-      routerLink="/"
-      class="group inline-flex items-center gap-2 text-primary font-medium hover:text-white transition-colors mb-12"
-    >
-      <span class="transform group-hover:-translate-x-1 transition-transform">&larr;</span>
-      Zurück zum Portfolio
-    </a>
+  <div
+    class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-white/5 py-4 px-6 md:px-12 mb-8 md:mb-12"
+  >
+    <div class="max-w-4xl mx-auto">
+      <a
+        routerLink="/"
+        class="group inline-flex items-center gap-2 text-primary font-medium hover:text-white transition-colors"
+      >
+        <span class="transform group-hover:-translate-x-1 transition-transform">&larr;</span>
+        Zurück zum Portfolio
+      </a>
+    </div>
+  </div>
 
+  <div class="max-w-4xl mx-auto px-6 md:px-12">
     <h1 class="text-4xl md:text-5xl font-bold text-white mb-12 tracking-tight">
       Datenschutzerklärung
     </h1>
@@ -351,7 +357,6 @@
             </p>
           </div>
         </div>
-
         <div class="pt-8 text-sm text-secondary">
           Quelle:
           <a

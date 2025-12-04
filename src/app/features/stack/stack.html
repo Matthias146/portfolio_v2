@@ -1,16 +1,31 @@
-<div class="card-stack h-full">
-  <h3 class="label-mono">Mein Arsenal</h3>
+<div class="card-stack h-full flex flex-col justify-center gap-5">
+  <!-- Header mit kleinem Icon oder Label -->
+  <div class="flex items-center justify-between">
+    <h3 class="label-mono">Tech Stack & Skills</h3>
+    <!-- Optional: Ein kleines "Code" Icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-5 h-5 text-secondary"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+      />
+    </svg>
+  </div>
 
-  <div class="stack-icons flex gap-4 items-center">
-    <div class="hover:text-[#dd0031] transition-colors" title="Angular">
-      <icon-angular class="w-8 h-8"></icon-angular>
+  <!-- Die Skill Cloud -->
+  <!-- 'flex-wrap' sorgt dafür, dass sie bei jeder Bildschirmgröße perfekt umbrechen -->
+  <div class="flex flex-wrap gap-2">
+    @for (skill of skills; track skill) {
+    <div class="skill-pill">
+      {{ skill }}
     </div>
-
-    <div class="hover:text-[#3178c6] transition-colors" title="TypeScript">
-      <icon-typescript class="w-8 h-8"></icon-typescript>
-    </div>
-
-    <span class="text-2xl cursor-default opacity-50">🌊</span>
-    <span class="text-2xl cursor-default opacity-50">🔥</span>
+    }
   </div>
 </div>

@@ -1,13 +1,19 @@
-<router-outlet></router-outlet>
-
-<footer
-  class="w-full py-8 text-center text-sm text-secondary border-t border-white/5 mt-12 bg-background"
+<div
+  class="min-h-screen flex flex-col bg-background text-white font-sans antialiased selection:bg-primary/30 selection:text-white"
 >
-  <div class="flex justify-center gap-6 mb-2">
-    <a routerLink="/impressum" class="hover:text-primary transition-colors">Impressum</a>
-    <a routerLink="/datenschutz" class="hover:text-primary transition-colors">Datenschutz</a>
-  </div>
-  <div class="opacity-50">
-    &copy; {{ currentYear }} Matthias Hammelehle. Built with Angular & Tailwind.
-  </div>
-</footer>
+  <main class="flex-1 w-full">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer
+    class="w-full py-8 text-center text-sm text-secondary border-t border-white/5 bg-background z-10 relative"
+  >
+    <div class="flex justify-center gap-6 mb-2">
+      <a routerLink="/impressum" class="hover:text-primary transition-colors">Impressum</a>
+      <a routerLink="/datenschutz" class="hover:text-primary transition-colors">Datenschutz</a>
+    </div>
+    <div class="opacity-50">
+      &copy; {{ currentYear }} Matthias Hammelehle. Built with Angular & Tailwind.
+    </div>
+  </footer>
+</div>

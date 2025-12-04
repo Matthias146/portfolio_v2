@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GithubComponent } from '../../shared/ui/icons/github';
 import { LinkedinComponent } from '../../shared/ui/icons/linkedin';
 import { SocialCard } from '../../shared/ui/social-card/social-card';
@@ -11,6 +11,7 @@ import { ContactCard } from '../about/contact-card/contact-card';
 import { ToolkitCard } from '../about/toolkit-card/toolkit-card';
 import { Location } from '../about/location/location';
 import { Project } from '../../core/models/project.interface';
+import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -31,33 +32,42 @@ import { Project } from '../../core/models/project.interface';
   styleUrl: './home.scss',
 })
 export class Home {
+  private seo = inject(SeoService);
+
+  constructor() {
+    this.seo.updateTags({
+      title: 'Frontend Developer',
+      description:
+        'Ich baue performante Web-Apps mit Angular 18+. Schau dir meine Projekte und Skills an.',
+    });
+  }
+
   projects: Project[] = [
     {
-      title: 'E-Commerce Dashboard',
+      title: 'El pollo loco',
       description:
-        'Ein hochperformantes Dashboard zur Analyse von Verkaufsdaten mit Echtzeit-Updates via WebSockets.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
-      techStack: ['Angular 18', 'Tailwind', 'Highcharts'],
-      liveDemoUrl: 'https://google.com',
+        'Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Salsaflaschen zu sammeln, um das Killerhuhn zu bekämpfen.',
+      imageUrl: 'Pollo loco 1.png',
+      techStack: ['JavaScript', 'HTML', 'CSS'],
+      liveDemoUrl: 'https://elpolloloco.matthias-hammelehle.dev',
       featured: true,
     },
     {
-      title: 'Travel App',
-      description: 'Eine interaktive Reiseplanung mit Maps-Integration und Animationen.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop',
-      techStack: ['Angular', 'Mapbox', 'PWA'],
-      liveDemoUrl: '#',
+      title: 'DaBubble',
+      description:
+        'Chat-Anwendung mit Firebase als Backend. Sie können Ihr eigenes Konto erstellen und mit anderen Benutzern chatten.',
+      imageUrl: 'DABubble.png',
+      techStack: ['Angular', 'SCSS', 'Firebase'],
+      liveDemoUrl: 'https://dabubble.matthias-hammelehle.dev',
       featured: false,
     },
     {
-      title: 'AI Chat Interface',
-      description: 'Ein moderner Chat-Client mit Streaming-Response und Markdown Support.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop',
-      techStack: ['OpenAI API', 'RxJS', 'Marked'],
-      liveDemoUrl: '#',
+      title: 'Join',
+      description:
+        'Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Drag & Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
+      imageUrl: 'join.png',
+      techStack: ['HTML', 'CSS', 'JavaScript'],
+      liveDemoUrl: 'https://join.matthias-hammelehle.dev',
       featured: false,
     },
   ];
